@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dks0bf3uniqnn"]
+
+[sub_resource type="TileSet" id="TileSet_e3cqc"]
+tile_shape = 3
+tile_offset_axis = 1
+
+[node name="Hex_Grid" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_e3cqc")
+format = 2

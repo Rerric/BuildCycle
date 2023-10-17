@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://dvclk2213jh4g"]
+[gd_scene load_steps=2 format=3 uid="uid://dvclk2213jh4g"]
+
+[ext_resource type="Script" path="res://ryan_test_scene.gd" id="1_5tksy"]
 
 [node name="RyanTestScene" type="Node2D"]
+script = ExtResource("1_5tksy")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 148.0
+offset_top = 411.0
+offset_right = 452.0
+offset_bottom = 565.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 729.0
+offset_top = 411.0
+offset_right = 1033.0
+offset_bottom = 565.0
+text = "Quit"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

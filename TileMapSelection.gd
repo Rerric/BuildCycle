@@ -11,8 +11,13 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			var global_clicked = event.position
 			var pos_clicked = local_to_map(to_local(global_clicked))
+			
 			print(pos_clicked)
+			
 			var current_atlas_coords = get_cell_atlas_coords(main_layer, pos_clicked)
+			
+			var cell_clicked = map_to_local(pos_clicked)
+			print(cell_clicked)
 			#object as child node instantiation failed commented out
 			#var object = preload("res://Object.tscn")
 			#var instance = object.instantiate()
@@ -21,7 +26,7 @@ func _input(event):
 			
 			#calling instantiate function, currently spawns house shifted too far down and right
 			# & doesnt go away when clicked again
-			inst(event.position)
+			inst(cell_clicked)
 			
 			var current_tile_alt = get_cell_alternative_tile(main_layer, pos_clicked)
 			var number_of_alts_for_clicked = tile_set.get_source(main_atlus_id)\

@@ -6,6 +6,7 @@ var is_night = false
 
 #building variable
 var building = preload("res://Building.tscn")
+var skyscraper = preload("res://Skyscraper.tscn")
 
 #handle input
 func _input(event):
@@ -49,6 +50,7 @@ func _input(event):
 						(current_tile_alt + 1) % number_of_alts_for_clicked)
 				inst(cell_clicked)
 				print("Created Tile")
+				
 						
 #instantiate function
 func inst(pos):

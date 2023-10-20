@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4dlovlr35hud"]
+
+[ext_resource type="Texture2D" uid="uid://dheuhw33juun7" path="res://skyscraper.png" id="1_p4avt"]
+
+[node name="Skyscraper" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_p4avt")

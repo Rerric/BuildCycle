@@ -14,3 +14,8 @@ config/name="BuildCycleProject"
 run/main_scene="res://ryan_test_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://civ8nj3uyrwi0"
-path="res://.godot/imported/Sprite-IdleHouse2.png-55201c6112c7350bbec8bc6fd5f2f9af.ctex"
+path="res://.godot/imported/Sprite-IdleHouse2.png-d683d4fd8720214f8e7312a4bcbfdb57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite-IdleHouse2.png"
-dest_files=["res://.godot/imported/Sprite-IdleHouse2.png-55201c6112c7350bbec8bc6fd5f2f9af.ctex"]
+source_file="res://Sprites/Sprite-IdleHouse2.png"
+dest_files=["res://.godot/imported/Sprite-IdleHouse2.png-d683d4fd8720214f8e7312a4bcbfdb57.ctex"]
 
 [params]
 

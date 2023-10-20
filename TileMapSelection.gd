@@ -2,13 +2,24 @@ extends TileMap
 
 const main_layer = 0
 const main_atlus_id = 6
+var is_night = false
 
 #building variable
 var building = preload("res://Building.tscn")
 
+#handle input
 func _input(event):
-	if Input.is_key_pressed(KEY_ESCAPE):
+	#quits the game
+	if Input.is_key_pressed(KEY_ESCAPE): 
 		get_tree().quit()
+		
+	#swaps between night and day
+	if Input.is_key_pressed(KEY_N):
+		if is_night:
+			is_night = false
+		else: is_night = true
+		print("It's nighttime? ", is_night)
+		
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 			var global_clicked = event.position
@@ -44,3 +55,7 @@ func inst(pos):
 	var instance = building.instantiate()
 	instance.position = pos
 	add_child(instance)
+
+func swap():
+	#put night/day functionality here
+	var alt_id = is_night

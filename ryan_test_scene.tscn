@@ -1,23 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvclk2213jh4g"]
+[gd_scene load_steps=3 format=3 uid="uid://dvclk2213jh4g"]
 
 [ext_resource type="Script" path="res://ryan_test_scene.gd" id="1_5tksy"]
+[ext_resource type="Texture2D" uid="uid://bsh6o17wqj5qn" path="res://Sprites/title.png" id="2_5laxx"]
 
 [node name="RyanTestScene" type="Node2D"]
 script = ExtResource("1_5tksy")
 
 [node name="Play" type="Button" parent="."]
 offset_left = 619.0
-offset_top = 824.0
+offset_top = 765.0
 offset_right = 923.0
-offset_bottom = 978.0
+offset_bottom = 919.0
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 1039.0
-offset_top = 824.0
+offset_top = 765.0
 offset_right = 1343.0
-offset_bottom = 978.0
+offset_bottom = 919.0
 text = "Quit"
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(982, 440)
+texture = ExtResource("2_5laxx")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

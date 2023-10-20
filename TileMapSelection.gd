@@ -3,6 +3,7 @@ extends TileMap
 const main_layer = 0
 const main_atlus_id = 6
 var is_night = false
+var buildingSelect = 0
 
 #building variable
 var building = preload("res://Building.tscn")
@@ -15,11 +16,17 @@ func _input(event):
 		get_tree().quit()
 		
 	#swaps between night and day
-	if Input.is_key_pressed(KEY_N):
-		if is_night:
-			is_night = false
-		else: is_night = true
-		print("It's nighttime? ", is_night)
+	if event is InputEventKey:
+		if event.keycode == KEY_N and event.is_pressed() and !event.is_echo():
+			if is_night:
+				is_night = false
+			else: is_night = true
+			print("It's nighttime? ", is_night)
+			swap()
+		if event.keycode == KEY_1 and event.is_pressed() and !event.is_echo():
+			buildingSelect = 0
+		if event.keycode == KEY_2 and event.is_pressed() and !event.is_echo():
+			buildingSelect = 1
 		
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
@@ -46,8 +53,8 @@ func _input(event):
 						.get_alternative_tiles_count(current_atlas_coords)
 						
 			if (current_tile_alt == 0): 
-				set_cell(main_layer, pos_clicked, main_atlus_id, current_atlas_coords, 
-						(current_tile_alt + 1) % number_of_alts_for_clicked)
+				#set_cell(main_layer, pos_clicked, main_atlus_id, current_atlas_coords, 
+						#(current_tile_alt + 1) % number_of_alts_for_clicked)
 				inst(cell_clicked)
 				print("Created Tile")
 				
@@ -56,8 +63,15 @@ func _input(event):
 func inst(pos):
 	var instance = building.instantiate()
 	instance.position = pos
+	instance.get_script()
+	instance.current_sprite = buildingSelect
 	add_child(instance)
 
 func swap():
 	#put night/day functionality here
-	var alt_id = is_night
+	var alt_id = 0
+	if !is_night: alt_id = 2
+	var tile_map = get_used_cells(main_layer)
+	var tile_to_swap = Vector2i(alt_id,0)
+	for i in tile_map:
+		set_cell(main_layer, i, main_atlus_id, tile_to_swap)
